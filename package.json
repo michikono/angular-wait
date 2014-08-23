@@ -5,7 +5,7 @@
 		"type": "git",
 		"url": "http://github.com/michikono/angular-wait.git"
 	},
-	"main": "src/angular-wait.js",
+	"main": "dist/angular-wait.min.js",
 	"dependencies": {},
 	"devDependencies": {
     "grunt-cli": "*",
