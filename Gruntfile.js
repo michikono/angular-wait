@@ -13,5 +13,10 @@ module.exports = function (grunt) {
 		'karma'
 	]);
 
-	grunt.registerTask('default', ['test']);
+  grunt.registerTask('build', [
+    'jshint',
+    'ngAnnotate'
+  ]);
+
+	grunt.registerTask('default', ['build']);
 };

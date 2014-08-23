@@ -1,5 +1,5 @@
 /**
- * angular-wait version 1.0.1
+ * angular-wait version 1.0.0
  * License: MIT.
  * Copyright (C) 2014 Michi Kono
  * https://github.com/michikono/angular-wait
@@ -12,7 +12,7 @@
   var angular = window.angular;
   angular
     .module('michiKono', [])
-    .controller('waitDirectiveCtrl', function WaitDirectiveCtrl($scope, $element) {
+    .controller('waitDirectiveCtrl', ['$scope', '$element', function WaitDirectiveCtrl($scope, $element) {
 
       $scope.show = false;
 
@@ -46,7 +46,7 @@
           updateChildren();
         }
       });
-    })
+    }])
     .directive('wait', function () {
       return {
         controller: 'waitDirectiveCtrl',

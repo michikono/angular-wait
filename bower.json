@@ -1,11 +1,11 @@
 {
   "name": "angular-wait",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "authors": [
     "Michi Kono <michikono@gmail.com>"
   ],
   "description": "An Angular directive for showing different content while an asynchronous request is pending",
-  "main": "src/angular-wait.js",
+  "main": "dist/angular-wait.js",
   "keywords": [
     "angular",
     "wait",
