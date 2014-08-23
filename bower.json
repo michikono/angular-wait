@@ -1,0 +1,33 @@
+{
+  "name": "angular-wait",
+  "version": "1.0.0",
+  "authors": [
+    "Michi Kono <michikono@gmail.com>"
+  ],
+  "description": "An Angular directive for showing different content while an asynchronous request is pending",
+  "main": "src/angular-wait.js",
+  "keywords": [
+    "angular",
+    "wait",
+    "waiting",
+    "directive",
+    "load",
+    "loading"
+  ],
+  "license": "MIT",
+  "homepage": "http://www.michikono.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "angular": "~1.2",
+    "angular-mocks": "~1.2",
+    "jasmine": "~2.0.0"
+  }
+}
