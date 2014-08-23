@@ -24,7 +24,7 @@ And in your view:
 Here's what would happen:
 
 1. "Loading" would initially appear
-2. 2 seconds later, "hello from the server" would show
+2. Two seconds later, "hello from the server" would show
 
 ## Why is this better than ng-if="variableName"?
 
