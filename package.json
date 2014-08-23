@@ -8,15 +8,17 @@
 	"main": "src/angular-wait.js",
 	"dependencies": {},
 	"devDependencies": {
-		"grunt": "~0.4.1",
-		"load-grunt-tasks": "0.6.0",
-		"grunt-contrib-jshint": "~0.10.0",
-		"grunt-contrib-uglify": "~0.5.0",
-		"grunt-karma": "~0.8.0",
-		"karma-coverage": "~0.2.0",
-		"karma-jasmine": "~0.2.2",
-		"karma-phantomjs-launcher": "~0.1.1",
-		"coveralls": "~2.11.0"
+    "grunt-cli": "*",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-karma": "~0.8.0",
+    "jshint-stylish": "~0.1.3",
+    "karma": "~0.12.0",
+    "karma-jasmine": "~0.2.2",
+    "karma-phantomjs-launcher": "~0.1.1",
+    "load-grunt-config": "^0.12.0",
+    "load-grunt-tasks": "~0.4.0"
 	},
 	"engines": {
 		"node": ">=0.10.0"

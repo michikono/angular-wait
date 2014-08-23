@@ -19,7 +19,7 @@ And in your view:
       <wait-loading>loading...</wait-loading>
       <wait-done>{{myAsyncValue}}</wait-done>
     </wait>
-```html
+```
 
 Here's what would happen:
 
@@ -55,7 +55,7 @@ And in your view:
 This would yield:
 
 1. "Loading" would initially appear
-2. 2 seconds later, "No result" would show
+2. Two seconds later, "No result" would show
 
 # Requirements
 
