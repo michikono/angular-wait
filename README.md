@@ -32,13 +32,14 @@ controller:
 
 And in your view:
 
-    <wait until-not-undefined="myAsyncValue">
-      <wait-loading>loading...</wait-loading>
-      <wait-done>
-        <div ng-if="myAsyncValue">{{myAsyncValue}}</div>
-        <div ng-if="!myAsyncValue">No result</wait-done>
-    </wait>
-
+```html
+<wait until-not-undefined="myAsyncValue">
+  <wait-loading>loading...</wait-loading>
+  <wait-done>
+    <div ng-if="myAsyncValue">{{myAsyncValue}}</div>
+    <div ng-if="!myAsyncValue">No result</wait-done>
+</wait>
+```
 
 # Requirements
 
@@ -46,11 +47,13 @@ Tested in IE8+, latest Chrome, and latest Safari. Angular 1.2+.
 
 # Installing
 
-    bower install angular-wait
+```shell
+bower install -S angular-wait
+```
 
 Integrate into your app:
 
-```html
+```js
 var myapp = angular.module('myapp', ['michiKono']);
 ```
 
@@ -58,58 +61,64 @@ var myapp = angular.module('myapp', ['michiKono']);
 
 Simply define the `wait` directive with `wait-loading` (mandatory) and `wait-done` nodes inside it as shown below:
 
-    <wait until-not-false="someVariable">
-      <wait-loading>shown while waiting</wait-loading>
-      <wait-done>shown when finished</wait-done>
-    </wait>
-     
-    <wait until-not-null="someVariable">
-      <wait-loading>shown while waiting</wait-loading>
-      <wait-done>shown when finished</wait-done>
-    </wait>
+```html
+<wait until-not-false="someVariable">
+  <wait-loading>shown while waiting</wait-loading>
+  <wait-done>shown when finished</wait-done>
+</wait>
+ 
+<wait until-not-null="someVariable">
+  <wait-loading>shown while waiting</wait-loading>
+  <wait-done>shown when finished</wait-done>
+</wait>
 
-    <wait until-not-undefined="someVariable">
-      <wait-loading>shown while waiting</wait-loading>
-      <wait-done>shown when finished</wait-done>
-    </wait>
+<wait until-not-undefined="someVariable">
+  <wait-loading>shown while waiting</wait-loading>
+  <wait-done>shown when finished</wait-done>
+</wait>
+```
 
 ## Wait Until _____
 
 All three available attributes to the directive watch the passed condition or variable until its value matches
 the asked state. For example the following uses all immediately render the `wait-done` nodes:
 
-    <wait until-not-null="null">
-      <wait-loading>not shown</wait-loading>
-      <wait-done>SHOWS IMMEDIATELY</wait-done>
-    </wait>
-     
-    <wait until-not-false="false">
-      <wait-loading>not shown</wait-loading>
-      <wait-done>SHOWS IMMEDIATELY</wait-done>
-    </wait>
-    
-    <wait until-not-undefined="1">
-      <wait-loading>not shown</wait-loading>
-      <wait-done>SHOWS IMMEDIATELY</wait-done>
-    </wait>
+```html
+<wait until-not-null="null">
+  <wait-loading>not shown</wait-loading>
+  <wait-done>SHOWS IMMEDIATELY</wait-done>
+</wait>
+ 
+<wait until-not-false="false">
+  <wait-loading>not shown</wait-loading>
+  <wait-done>SHOWS IMMEDIATELY</wait-done>
+</wait>
+
+<wait until-not-undefined="1">
+  <wait-loading>not shown</wait-loading>
+  <wait-done>SHOWS IMMEDIATELY</wait-done>
+</wait>
+```
     
 Note that the matching is using triple equals (`===`). This means that falsey values for the `until-not-null` do not 
 necessarily trigger it. The following example illustrates this:
 
-    <wait until-not-null="false">
-      <wait-loading>SHOWN</wait-loading>
-      <wait-done>not shown</wait-done>
-    </wait>
-     
-    <wait until-not-false="null">
-      <wait-loading>SHOWN</wait-loading>
-      <wait-done>not shown</wait-done>
-    </wait>
-    
-    <wait until-not-undefined="false">
-      <wait-loading>SHOWN</wait-loading>
-      <wait-done>not shown</wait-done>
-    </wait>
+```html
+<wait until-not-null="false">
+  <wait-loading>SHOWN</wait-loading>
+  <wait-done>not shown</wait-done>
+</wait>
+ 
+<wait until-not-false="null">
+  <wait-loading>SHOWN</wait-loading>
+  <wait-done>not shown</wait-done>
+</wait>
+
+<wait until-not-undefined="false">
+  <wait-loading>SHOWN</wait-loading>
+  <wait-done>not shown</wait-done>
+</wait>
+```
     
 Lastly, it probably goes without saying that the inner contents are using transclusion and are not rendered (and, thus, processed) 
 until the `until-` condition is met.
