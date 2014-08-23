@@ -67,7 +67,7 @@ Tested in IE8+, latest Chrome, and latest Safari. Angular 1.2+.
 bower install -S angular-wait
 ```
 
-Integrate into your app:
+Make sure to use the files from the `dist/` folder. Then Integrate into your app:
 
 ```js
 var myapp = angular.module('myapp', ['michiKono']);
