@@ -3,19 +3,28 @@
 This Angular directive enables a "loading" view while performing asynchronous requests. The directive watches a specific value you may be 
 interested in. For example, your controller:
 
-    angular.module('your app')
-      .controller('ExampleCtrl', function ($scope, $timeout) {
-        $timeout(function() {
-          $scope.myAsyncValue = 'hello from the server'; 
-        }, 2000)
-      });
+```js
+angular.module('your app')
+  .controller('ExampleCtrl', function ($scope, $timeout) {
+    $timeout(function() {
+        $scope.myAsyncValue = 'hello from the server'; 
+    }, 2000)
+  });
+```
 
 And in your view:
 
+```html
     <wait until-not-undefined="myAsyncValue">
       <wait-loading>loading...</wait-loading>
       <wait-done>{{myAsyncValue}}</wait-done>
     </wait>
+```html
+
+Here's what would happen:
+
+1. "Loading" would initially appear
+2. 2 seconds later, "hello from the server" would show
 
 ## Why is this better than ng-if="variableName"?
 
@@ -23,12 +32,14 @@ This directive helps remove potentially complex condition checking from the view
 can't always distinguish between incomplete requests and empty responses. This illustrates the example better; see this 
 controller:
 
-    angular.module('your app')
-      .controller('ExampleCtrl', function ($scope, $timeout) {
-        $timeout(function() {
-          $scope.myAsyncValue = null; 
-        }, 2000)
-      });
+```js
+angular.module('your app')
+  .controller('ExampleCtrl', function ($scope, $timeout) {
+    $timeout(function() {
+      $scope.myAsyncValue = null; 
+    }, 2000)
+  });
+```
 
 And in your view:
 
@@ -40,6 +51,11 @@ And in your view:
     <div ng-if="!myAsyncValue">No result</wait-done>
 </wait>
 ```
+
+This would yield:
+
+1. "Loading" would initially appear
+2. 2 seconds later, "No result" would show
 
 # Requirements
 
