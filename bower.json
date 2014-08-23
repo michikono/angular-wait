@@ -5,7 +5,7 @@
     "Michi Kono <michikono@gmail.com>"
   ],
   "description": "An Angular directive for showing different content while an asynchronous request is pending",
-  "main": "dist/angular-wait.min.js",
+  "main": "src/angular-wait.js",
   "keywords": [
     "angular",
     "wait",

@@ -5,11 +5,10 @@
 		"type": "git",
 		"url": "http://github.com/michikono/angular-wait.git"
 	},
-	"main": "dist/angular-wait.min.js",
+	"main": "src/angular-wait.js",
 	"dependencies": {},
 	"devDependencies": {
     "grunt-cli": "*",
-    "grunt-contrib-copy": "~0.4.1",
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-uglify": "~0.2.7",
     "grunt-karma": "~0.8.0",

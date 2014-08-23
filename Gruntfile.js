@@ -13,11 +13,5 @@ module.exports = function (grunt) {
 		'karma'
 	]);
 
-	grunt.registerTask('build', [
-    'jshint',
-    'copy',
-		'uglify'
-	]);
-
-	grunt.registerTask('default', ['build']);
+	grunt.registerTask('default', ['test']);
 };
