@@ -1,3 +1,11 @@
+/**
+ * angular-wait version 1.0.0
+ * License: MIT.
+ * Copyright (C) 2014 Michi Kono
+ * https://github.com/michikono/angular-wait
+ */
+
+
 'use strict';
 
 (function (window) {
