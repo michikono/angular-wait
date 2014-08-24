@@ -143,5 +143,6 @@ processed at all (compile or controller methods) until the `wait-done` node rend
 
 ## Releases ##
 
-1.0.1 Aug 23, 2014 - Inner directives not processed until done node shows
+1.0.2 Aug 23, 2014 - Inner directives not processed until done node shows
+1.0.1 Aug 23, 2014 - Support for minification by using ngAnnotate
 1.0.0 Aug 23, 2014 - Initial Release
