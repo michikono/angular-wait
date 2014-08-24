@@ -16,7 +16,8 @@ module.exports = function (config) {
 			'bower_components/angular/angular.js',
       'src/*.js',
 			'bower_components/angular-mocks/angular-mocks.js',
-			'test/*.js'
+      'test/mocks/*.js',
+      'test/*.js'
 		],
 		preprocessors: {
 			'src/*.js': 'coverage'

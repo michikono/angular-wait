@@ -135,6 +135,13 @@ necessarily trigger it. The following example illustrates this:
   <wait-done>not shown</wait-done>
 </wait>
 ```
-    
-Lastly, it probably goes without saying that the inner contents are using transclusion and are not rendered (and, thus, processed) 
-until the `until-` condition is met.
+
+## Technical notes ##
+
+The inner contents are using transclusion can handle child directives. Inner directives are not 
+processed at all (compile or controller methods) until the `wait-done` node renders.
+
+## Releases ##
+
+1.0.1 Aug 23, 2014 - Inner directives not processed until done node shows
+1.0.0 Aug 23, 2014 - Initial Release

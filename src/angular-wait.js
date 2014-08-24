@@ -5,7 +5,6 @@
  * https://github.com/michikono/angular-wait
  */
 
-
 'use strict';
 
 (function (window) {
@@ -13,9 +12,7 @@
   angular
     .module('michiKono', [])
     .controller('waitDirectiveCtrl', function WaitDirectiveCtrl($scope, $element) {
-
       $scope.show = false;
-
       var childScopes = [];
 
       var updateChildren = function () {
@@ -85,6 +82,8 @@
     })
     .directive('waitDone', function () {
       return {
+        priority: 1,
+        terminal: true,
         restrict: 'EA',
         replace: true,
         template: '<span ng-transclude></span>',

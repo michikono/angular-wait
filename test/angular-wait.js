@@ -1,7 +1,6 @@
 'use strict';
 
 describe('Directive: wait', function () {
-
   // load the directive's module
   beforeEach(module('michiKono'));
 
@@ -22,9 +21,7 @@ describe('Directive: wait', function () {
     $rootScope = _$rootScope_;
     $compile = _$compile_;
     $templateCache = _$templateCache_;
-
     $scope = $rootScope.$new();
-
   }));
 
   describe('attribute until-not-false', function () {
@@ -116,6 +113,43 @@ describe('Directive: wait', function () {
       $scope.$digest();
       expect(element.html().replace(/ class="ng-scope"/g, '')).not.toMatch(/><span>noise<\/span><span>LOADING<\/span></);
       expect(element.html().replace(/ class="ng-scope"/g, '')).toMatch(/><span>noise<\/span><span>DONE<\/span></);
+    }));
+  });
+
+  describe('render order', function() {
+    it('should not process inner scope changes or directives until done condition met', inject(function ($compile) {
+      $scope.doNotRender = null;
+      element = doDirective('<wait until-not-null="null"><wait-loading></wait-loading><wait-done><span ng-init="doNotRender = \'value\'"></span></wait-done></wait>', $compile);
+      $scope.$digest();
+      expect($scope.doNotRender).toBeNull();
+    }));
+
+    it('should process inner scope changes when done condition met', inject(function ($compile) {
+      $scope.doNotRender = null;
+      element = doDirective('<wait until-not-null="true"><wait-loading></wait-loading><wait-done><span ng-init="doNotRender = \'value\'"></span></wait-done></wait>', $compile);
+      $scope.$digest();
+      expect($scope.doNotRender).toEqual('value');
+    }));
+
+    it('should run controller and compile methods of inner directives when done condition met', inject(function ($compile) {
+      $scope.exampleDirective = {};
+      element = doDirective('<wait until-not-null="true"><wait-loading></wait-loading><wait-done><example-directive></example-directive></wait-done></wait>', $compile);
+      $scope.$digest();
+      expect($scope.exampleDirective.controller).toBe(true);
+      expect($scope.exampleDirective.pre).toBe(true);
+      expect($scope.exampleDirective.post).toBe(true);
+      expect(element.html().replace(/ class="ng-scope"/g, '')).toMatch(/<example-stub><\/example-stub>/);
+    }));
+
+    it('should not run controller and compile methods of inner directives until done condition met', inject(function ($compile) {
+      $scope.exampleDirective = {};
+      element = doDirective('<wait until-not-null="null"><wait-loading></wait-loading><wait-done><example-directive></example-directive></wait-done></wait>', $compile);
+      $scope.$digest();
+      expect($scope.exampleDirective.compile).not.toBeDefined();
+      expect($scope.exampleDirective.controller).not.toBeDefined();
+      expect($scope.exampleDirective.pre).not.toBeDefined();
+      expect($scope.exampleDirective.post).not.toBeDefined();
+      expect(element.html().replace(/ class="ng-scope"/g, '')).not.toMatch(/<example-directive><\/example-directive>/);
     }));
   });
 });

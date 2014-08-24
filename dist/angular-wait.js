@@ -1,5 +1,5 @@
 /**
- * angular-wait version 1.0.0
+ * angular-wait version 1.0.1
  * License: MIT.
  * Copyright (C) 2014 Michi Kono
  * https://github.com/michikono/angular-wait
@@ -85,6 +85,8 @@
     })
     .directive('waitDone', function () {
       return {
+        priority: 1,
+        terminal: true,
         restrict: 'EA',
         replace: true,
         template: '<span ng-transclude></span>',
