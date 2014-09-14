@@ -57,6 +57,8 @@ This would yield:
 1. "Loading" would initially appear
 2. Two seconds later, "No result" would show
 
+Any nested directives (if any) in `wait-done`, would not be processed until the `until` condition is met (see technical notes).
+
 # Requirements
 
 Tested in IE8+, latest Chrome, and latest Safari. Angular 1.2+. 
