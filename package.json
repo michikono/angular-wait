@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "repository": {
     "type": "git",
-    "url": "http://github.com/michikono/angular-wait.git"
+    "url": "https://github.com/michikono/angular-wait.git"
   },
   "main": "dist/angular-wait.js",
   "dependencies": {
